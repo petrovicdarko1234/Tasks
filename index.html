@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script src="lib/index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="onLoad()">
+    <div class="container">
+        <div class="toDoApp">
+            <h2>Tasks</h2>
+
+            <div class="row">
+                <input class="textBox" onchange=" updateTextarea(this.value)" type="text" id="textBox"
+                    placeholder="Add task">
+                <button id="addBtn" class="button" onclick="newTask()">Add</button>
+            </div>
+            <button onclick="deleteAll()" class="delete">Delete all</button>
+            <ul id="lista">
+                <li class="checked">task1</li>
+                <li>task2</li>
+                <li>task3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
