@@ -4,29 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasks</title>
-    <script src="lib/index.js"></script>
+    <title>login-tasks</title>
     <link rel="stylesheet" href="style.css">
+    <script src="lib/index.js"></script>
 </head>
 
-<body onload="onLoad()">
-    <div class="container">
-        <div class="toDoApp">
-            <h2>Tasks</h2>
+<body onload="test()">
 
-            <div class="row">
-                <input class="textBox" onchange=" updateTextarea(this.value)" type="text" id="textBox"
-                    placeholder="Add task">
-                <button id="addBtn" class="button" onclick="newTask()">Add</button>
-            </div>
-            <button onclick="deleteAll()" class="delete">Delete all</button>
-            <ul id="lista">
-                <li class="checked">task1</li>
-                <li>task2</li>
-                <li>task3</li>
-            </ul>
+    <div class="loginContainer">
+        <div class="row">
+            <label class="lbl" for="username">Username:</label>
+            <input class="textBox" type="text" id="username">
+        </div>
+        <div class="row">
+            <label class="lbl" for="password">Password:</label>
+            <input class="textBox" type="text" id="password">
+        </div>
+        <div class="row-buttons">
+            <button onclick="createAcc()" id="loginbtnl" class="loginbtn">Create acount</button>
+            <button onclick="login()" class="loginbtn">Login</button>
         </div>
     </div>
+
 </body>
 
 </html>
