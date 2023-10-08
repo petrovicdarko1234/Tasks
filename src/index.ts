@@ -36,10 +36,8 @@ async function createAcc() {
         return
     }
 
-
     setCookie("_userID", json.Id + "")
     window.location.href = "tasks.html"
-
 }
 function logout() {
     deleteCookie("_userID")
@@ -219,7 +217,6 @@ async function updateTask(id: number) {
         //body: "{\"Description\":\"" + _txtarea + "\"}"
     })
 }
-
 /*
  * General utils for managing cookies in Typescript.
  */
