@@ -16,14 +16,38 @@ type User = {
 }
 let _userID: number
 //login
-function createAcc() {
+async function createAcc() {
+    let user = <HTMLInputElement>document.getElementById("username")
+    let username = user.value
+    let pass = <HTMLInputElement>document.getElementById("password")
+    let password = pass.value
+
+    let response = await fetch(_URL + "/api/create", {
+        method: 'POST',
+        body: JSON.stringify({ Username: username, Password: password }),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    let json = await response.json()
+    if (json.Id == -1) {
+        let msg = <HTMLDivElement>document.getElementById("msg")
+        msg.innerHTML = "User with that username already exists"
+        return
+    }
+
+
+    setCookie("_userID", json.Id + "")
+    window.location.href = "tasks.html"
 
 }
-
+function logout() {
+    deleteCookie("_userID")
+    window.location.href = "http://localhost:4000/"
+}
 function checkCookie() {
     let cookie = getCookie("_userID")
     if (cookie != "") {
-        console.log(cookie)
         window.location.href = "tasks.html"
     }
 }
@@ -43,6 +67,12 @@ async function login() {
         },
     })
     let json = await response.json()
+
+    if (json.Id == -1) {
+        let msg = <HTMLDivElement>document.getElementById("msg")
+        msg.innerHTML = "Wrong username or password"
+        return
+    }
 
     setCookie("_userID", json.Id + "")
 

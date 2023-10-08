@@ -54,8 +54,29 @@
     color: floralwhite;
 }
 
+.logoutCont {
+    width: 540px;
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.logout {
+    margin-right: 50px;
+    background: #000000;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout:hover {
+    background-color: #aa100d;
+}
+
 .container {
     display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #153677, #4e085f);
@@ -76,6 +97,16 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    background: white;
+    color: red;
 }
 
 .row {
