@@ -41,7 +41,7 @@ async function createAcc() {
 }
 function logout() {
     deleteCookie("_userID")
-    window.location.href = "http://localhost:4000/"
+    window.location.href = _URL
 }
 function checkCookie() {
     let cookie = getCookie("_userID")
@@ -100,6 +100,18 @@ async function loadData() {
     if (cont == null) {
         return
     }
+    let res = await fetch(_URL + "/api/username/" + _userID, {
+        method: 'GET',
+
+    })
+    let ujson = await res.json()
+    let username = ujson as User
+
+    let use = document.getElementById("username")
+    if (use != null) {
+        use.innerHTML = "Username: " + username.Username
+    }
+
 
     cont.innerHTML = ""
     for (let i = 0; i < tasks.length; i++) {

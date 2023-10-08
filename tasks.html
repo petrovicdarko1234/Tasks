@@ -10,7 +10,12 @@
 </head>
 
 <body onload="onLoad()">
+
     <div class="container">
+        <div class="usernameCont">
+            <h5 id="username"></h5>
+            <button onclick="logout()" id="logoutbtn" class="logout">Logout</button>
+        </div>
         <div class="toDoApp">
             <h2>Tasks</h2>
 
@@ -22,14 +27,11 @@
             <button onclick="deleteAll()" class="delete">Delete all</button>
             <ul id="lista">
                 <li class="checked">task1</li>
-                <li>task2</li>
-                <li>task3</li>
+                <li>Server</li>
+                <li>Not</li>
+                <li>Working</li>
             </ul>
         </div>
-        <div class="logoutCont">
-            <button onclick="logout()" id="logoutbtn" class="logout">Logout</button>
-        </div>
-
     </div>
 </body>
 
