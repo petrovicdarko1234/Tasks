@@ -86,7 +86,8 @@
 .usernameCont {
     display: flex;
     flex-direction: row;
-    width: 600px;
+    width: 100%;
+    max-width: 540px;
     align-self: flex-end;
     margin-top: 50px;
     margin-bottom: none;
